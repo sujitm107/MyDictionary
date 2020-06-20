@@ -14,7 +14,6 @@ class DefinitionViewController: UIViewController {
     @IBOutlet weak var definitionTableView: UITableView!
     @IBOutlet weak var wordLabel: UILabel!
     var wordDefinition: WordDefinition?
-    
     var cwordDefinition: ListWord?
 
     var definitions: [Definition]?
@@ -25,16 +24,37 @@ class DefinitionViewController: UIViewController {
         if cwordDefinition != nil {
             let savedText = cwordDefinition?.text
             wordLabel.text = savedText
-            let set = cwordDefinition?.definitions as! Set<DefinitionEntry>
-            print(set.startIndex)
+            let set = cwordDefinition?.definitions?.allObjects as! [DefinitionEntry]
+            
+            let definitionSet = convertToDefinitionSet(set: set)
+            definitions = definitionSet
+            
             
         } else {
             definitions = self.wordDefinition?.getDefinitions(lexicalEntries: wordDefinition!.word.results![0].lexicalEntries!)
+            MyDictionary.getInstance().addDefinition(word: wordDefinition!.id, defintions: definitions!)
             self.wordLabel.text = wordDefinition?.id
         }
         
         definitionTableView.delegate = self
         definitionTableView.dataSource = self
+    }
+    
+    func convertToDefinitionSet(set: [DefinitionEntry]) -> [Definition]{
+        
+        var definitionSet: [Definition] = []
+        
+        for entry in set {
+            let partOfSpeech = entry.partOfSpeech
+            let definition = entry.definition
+            
+            let temp = Definition(partOfSpeech: partOfSpeech!, definition: definition!)
+            
+            definitionSet.append(temp)
+        }
+        
+        return definitionSet
+        
     }
     
 }

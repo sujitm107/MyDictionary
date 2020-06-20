@@ -36,7 +36,7 @@ class MyDictionary{
         
         //2 Links entity to NSManagedObject at runtime
         let entity = NSEntityDescription.entity(forEntityName: "ListWord", in: managedContext)!
-        
+
         let word = NSManagedObject(entity: entity, insertInto: managedContext)
         
         //3 Inserting the item into the entity that we created in step 2
@@ -51,28 +51,47 @@ class MyDictionary{
         }
     }
     
-    func addDefinition(word: ListWord, defintions: [Definition]){
+    func addDefinition(word: String, defintions: [Definition]){
         
-        for definition in defintions {
-            let entry = DefinitionEntry()
-            entry.definition = definition.definition
-            entry.partOfSpeech = definition.partOfSpeech
-            
-            word.addToDefinitions(entry)
-        }
-            
-        
+        //1 Getting context of persistent container inside the app delegate
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
         let managedContext = appDelegate.persistentContainer.viewContext
         
+        guard let savedWord: ListWord = getSavedWord(string: word) else { return }
+        for definition in defintions {
+            
+            //2 Links entity to NSManagedObject at runtime
+            let entity = NSEntityDescription.entity(forEntityName: "DefinitionEntry", in: managedContext)!
+            let entry = NSManagedObject(entity: entity, insertInto: managedContext) as! DefinitionEntry
+            
+            //3
+            entry.setValue(definition.definition, forKey: "definition")
+            entry.setValue(definition.partOfSpeech, forKey: "partOfSpeech")
+            
+            savedWord.addToDefinitions(entry)
+        }
+            
         do {
             try managedContext.save()
-            wordsList.append(word)
+            wordsList.append(savedWord)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+        
+    }
+    
+    func getSavedWord(string: String) -> ListWord? {
+        
+        for word in wordsList {
+            let temp = word as! ListWord
+            if(temp.text!.lowercased() == string){
+                return temp
+            }
+        }
+        
+        return nil
         
     }
     

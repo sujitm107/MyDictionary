@@ -41,7 +41,6 @@ extension WordListViewController: UITableViewDataSource, UITableViewDelegate {
         let word = MyDictionary.getInstance().getWordsList()[indexPath.row]
         
         cell.textLabel?.text = word.value(forKeyPath: "text") as? String
-        
         return cell
     }
     
@@ -62,7 +61,9 @@ extension WordListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let savedWord = MyDictionary.getInstance().getWordsList()[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "listToDefinition", sender: savedWord)
+        
     }
     
     
