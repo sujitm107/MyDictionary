@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DefinitionEntry" representedClassName="DefinitionEntry" syncable="YES" codeGenerationType="class">
+        <attribute name="definition" optional="YES" attributeType="String"/>
+        <attribute name="partOfSpeech" optional="YES" attributeType="String"/>
+        <relationship name="definedWord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListWord" inverseName="definitions" inverseEntity="ListWord"/>
+    </entity>
+    <entity name="ListWord" representedClassName="ListWord" syncable="YES" codeGenerationType="class">
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="definitions" toMany="YES" deletionRule="Nullify" destinationEntity="DefinitionEntry" inverseName="definedWord" inverseEntity="DefinitionEntry"/>
+    </entity>
+    <elements>
+        <element name="DefinitionEntry" positionX="-63" positionY="-9" width="128" height="88"/>
+        <element name="ListWord" positionX="-69.31640625" positionY="-222.64453125" width="128" height="73"/>
+    </elements>
+</model>
