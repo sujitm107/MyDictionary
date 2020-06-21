@@ -13,8 +13,6 @@ class WordListViewController: UIViewController {
 
     @IBOutlet weak var wordListTableView: UITableView!
     
-    let wordList: [String] = ["Apples", "Bannanas", "Cars"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,10 +38,22 @@ extension WordListViewController: UITableViewDataSource, UITableViewDelegate {
 
         let word = MyDictionary.getInstance().getWordsList()[indexPath.row]
         
+///code for attributed string if I want to use it later
+//        let text: String = word.value(forKeyPath: "text") as! String
+//        let attributedString = NSMutableAttributedString(string: text)
+//        let strRange = (text as NSString).range(of: text)
+//        let fontSize = cell.textLabel?.font
+//
+//        attributedString.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: T##CGFloat), range: T##NSRange)
+        
         cell.textLabel?.text = word.value(forKeyPath: "text") as? String
+        
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: cell.textLabel?.font.pointSize ?? 14)
+        
         return cell
     }
     
+    // deleting listWord item from memory and from list
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         MyDictionary.getInstance().removeWord(index: indexPath.row)
@@ -51,19 +61,25 @@ extension WordListViewController: UITableViewDataSource, UITableViewDelegate {
         self.wordListTableView.reloadData()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "listToDefinition"){
-            let vc = segue.destination as! DefinitionViewController
-            vc.cwordDefinition = sender as? ListWord
-        }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
     
+    
+    //seguing to definition screen
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let savedWord = MyDictionary.getInstance().getWordsList()[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "listToDefinition", sender: savedWord)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "listToDefinition"){
+            let vc = segue.destination as! DefinitionViewController
+            vc.cwordDefinition = sender as? ListWord
+        }
     }
     
     

@@ -75,7 +75,6 @@ class MyDictionary{
             
         do {
             try managedContext.save()
-            wordsList.append(savedWord)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
