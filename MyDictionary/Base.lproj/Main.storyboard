@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nox-nI-0uY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -10,7 +10,7 @@
         <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="MyDictionary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="BYZ-38-t0r" customClass="SearchViewController" customModule="MyDictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,13 +44,13 @@
         <!--Word List View Controller-->
         <scene sceneID="nEY-Le-K7t">
             <objects>
-                <viewController id="CsL-Yn-ivq" customClass="WordListViewController" customModule="MyDictionary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WordListViewController" id="CsL-Yn-ivq" customClass="WordListViewController" customModule="MyDictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IAE-PG-2WE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gyb-Mk-aHW">
-                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="wordCell" id="QhC-cd-e5m">
@@ -196,21 +196,78 @@
                         <color key="barTintColor" red="1" green="0.35294117650000001" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="cMt-FV-azt"/>
-                        <segue destination="CsL-Yn-ivq" kind="relationship" relationship="viewControllers" id="Zs6-GK-niy"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBh-z6-omO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4.3478260869565224" y="472.76785714285711"/>
+            <point key="canvasLocation" x="-2012" y="495"/>
+        </scene>
+        <!--Custom Tab View Controller-->
+        <scene sceneID="yV9-Pa-XpL">
+            <objects>
+                <viewController id="Nox-nI-0uY" customClass="CustomTabViewController" customModule="MyDictionary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v2D-hK-gfv" customClass="TabViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbV-vw-lyV">
+                                <rect key="frame" x="15" y="782" width="384" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-50" translatesAutoresizingMaskIntoConstraints="NO" id="TwZ-Tu-oLg">
+                                        <rect key="frame" x="20" y="24" width="344" height="22"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkG-Hb-nab">
+                                                <rect key="frame" x="0.0" y="0.0" width="197" height="22"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                                <connections>
+                                                    <action selector="tabChangedWithSender:" destination="Nox-nI-0uY" eventType="touchUpInside" id="O4a-wI-K8w"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WtU-dX-Lma">
+                                                <rect key="frame" x="147" y="0.0" width="197" height="22"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="book.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="tabChangedWithSender:" destination="Nox-nI-0uY" eventType="touchUpInside" id="aDu-EJ-McE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.35294117650000001" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="TwZ-Tu-oLg" firstAttribute="leading" secondItem="lbV-vw-lyV" secondAttribute="leading" constant="20" id="2jV-X2-bnn"/>
+                                    <constraint firstAttribute="trailing" secondItem="TwZ-Tu-oLg" secondAttribute="trailing" constant="20" id="IIL-IL-Mtj"/>
+                                    <constraint firstItem="TwZ-Tu-oLg" firstAttribute="centerY" secondItem="lbV-vw-lyV" secondAttribute="centerY" id="IRA-EJ-9GE"/>
+                                    <constraint firstAttribute="height" constant="70" id="L4E-GA-l6f"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dA0-Mi-PJN" firstAttribute="trailing" secondItem="lbV-vw-lyV" secondAttribute="trailing" constant="15" id="303-Ra-arx"/>
+                            <constraint firstItem="dA0-Mi-PJN" firstAttribute="bottom" secondItem="lbV-vw-lyV" secondAttribute="bottom" constant="10" id="L9k-QS-Z5o"/>
+                            <constraint firstItem="lbV-vw-lyV" firstAttribute="leading" secondItem="dA0-Mi-PJN" secondAttribute="leading" constant="15" id="YQM-Ss-Ash"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dA0-Mi-PJN"/>
+                    </view>
+                    <connections>
+                        <outlet property="tabView" destination="lbV-vw-lyV" id="5od-tG-TtW"/>
+                        <outletCollection property="buttons" destination="MkG-Hb-nab" collectionClass="NSMutableArray" id="wgJ-Al-jfD"/>
+                        <outletCollection property="buttons" destination="WtU-dX-Lma" collectionClass="NSMutableArray" id="ccx-7x-x7d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YnE-hN-IoN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-22" y="522"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aXw-v6-v3E"/>
+        <segue reference="9Ow-LJ-qJS"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book" catalog="system" width="128" height="101"/>
+        <image name="book.fill" catalog="system" width="128" height="100"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
     </resources>
 </document>

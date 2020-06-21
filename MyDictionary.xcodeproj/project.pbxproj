@@ -11,6 +11,7 @@
 		8141C951249DCAA9000E10D5 /* CardDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C950249DCAA9000E10D5 /* CardDefinition.swift */; };
 		817FB7F0249B0BE0007D1CC6 /* MyDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817FB7EF249B0BE0007D1CC6 /* MyDictionary.swift */; };
 		817FB7F2249B0BEE007D1CC6 /* WordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817FB7F1249B0BEE007D1CC6 /* WordDefinition.swift */; };
+		8197F535249F2CC6003B6CF1 /* CustomTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8197F534249F2CC6003B6CF1 /* CustomTabViewController.swift */; };
 		81CE43492492EBAD0022B98F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CE43482492EBAD0022B98F /* AppDelegate.swift */; };
 		81CE434B2492EBAD0022B98F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CE434A2492EBAD0022B98F /* SceneDelegate.swift */; };
 		81CE43502492EBAD0022B98F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81CE434E2492EBAD0022B98F /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		8141C950249DCAA9000E10D5 /* CardDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDefinition.swift; sourceTree = "<group>"; };
 		817FB7EF249B0BE0007D1CC6 /* MyDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDictionary.swift; sourceTree = "<group>"; };
 		817FB7F1249B0BEE007D1CC6 /* WordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinition.swift; sourceTree = "<group>"; };
+		8197F534249F2CC6003B6CF1 /* CustomTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewController.swift; sourceTree = "<group>"; };
 		81CE43452492EBAD0022B98F /* MyDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81CE43482492EBAD0022B98F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81CE434A2492EBAD0022B98F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				81CE435F2492EE110022B98F /* SearchViewController.swift */,
 				81FE4AFC2499708C005FE8A7 /* DefinitionViewController.swift */,
 				81169973249A9EA20070550F /* WordListViewController.swift */,
+				8197F534249F2CC6003B6CF1 /* CustomTabViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81CE43532492EBAD0022B98F /* MyDictionary.xcdatamodeld in Sources */,
+				8197F535249F2CC6003B6CF1 /* CustomTabViewController.swift in Sources */,
 				81FE4B042499DE60005FE8A7 /* WordJSON.swift in Sources */,
 				81CE43492492EBAD0022B98F /* AppDelegate.swift in Sources */,
 				81FE4B0224998E78005FE8A7 /* WordDefinitionCell.swift in Sources */,
