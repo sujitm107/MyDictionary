@@ -18,7 +18,7 @@ class CustomTabViewController: UIViewController {
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet var tabView:UIView!
     
-    var footerHeight: CGFloat = 50
+    //var footerHeight: CGFloat = 50
     
     static let firstVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchViewController")
     static let secondVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WordListViewController")
@@ -30,6 +30,10 @@ class CustomTabViewController: UIViewController {
         
         viewControllers.append(CustomTabViewController.firstVC)
         viewControllers.append(CustomTabViewController.secondVC)
+        
+        for button in buttons {
+            button.alpha = 0.4
+        }
         
         buttons[selectedIndex].isSelected = true
         tabChanged(sender: buttons[selectedIndex])
@@ -52,6 +56,10 @@ class CustomTabViewController: UIViewController {
         selectedIndex = sender.tag
         
         buttons[previousIndex].isSelected = false
+        
+        buttons[previousIndex].alpha = 0.6
+        buttons[selectedIndex].alpha = 1.0
+        
         let previousVC = viewControllers[previousIndex]
         
         previousVC.willMove(toParent: nil)
