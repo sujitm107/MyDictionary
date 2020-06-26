@@ -15,6 +15,8 @@ class CustomTabViewController: UIViewController {
     
     var viewControllers = [UIViewController]()
     
+    let primaryColor: UIColor = UIColor(displayP3Red: 255/255, green: 90/255, blue: 95/255, alpha: 1.0)
+    
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet var tabView:UIView!
     
@@ -41,6 +43,8 @@ class CustomTabViewController: UIViewController {
     }
     
     func setUpTab() -> Void {
+        
+        tabView.backgroundColor = primaryColor
         tabView.layer.shadowColor = UIColor.gray.cgColor
         tabView.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         tabView.layer.shadowOpacity = 0.5
@@ -74,10 +78,7 @@ class CustomTabViewController: UIViewController {
         vc.didMove(toParent: self)
         self.addChild(vc)
         self.view.addSubview(vc.view)
-        
         self.view.bringSubviewToFront(tabView)
-        
-        
         
     }
     

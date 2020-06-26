@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		81169974249A9EA20070550F /* WordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81169973249A9EA20070550F /* WordListViewController.swift */; };
-		8141C951249DCAA9000E10D5 /* CardDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C950249DCAA9000E10D5 /* CardDefinition.swift */; };
+		8141C951249DCAA9000E10D5 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C950249DCAA9000E10D5 /* Definition.swift */; };
 		817FB7F0249B0BE0007D1CC6 /* MyDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817FB7EF249B0BE0007D1CC6 /* MyDictionary.swift */; };
 		817FB7F2249B0BEE007D1CC6 /* WordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817FB7F1249B0BEE007D1CC6 /* WordDefinition.swift */; };
 		8197F535249F2CC6003B6CF1 /* CustomTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8197F534249F2CC6003B6CF1 /* CustomTabViewController.swift */; };
@@ -19,6 +19,7 @@
 		81CE43552492EBAF0022B98F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81CE43542492EBAF0022B98F /* Assets.xcassets */; };
 		81CE43582492EBAF0022B98F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81CE43562492EBAF0022B98F /* LaunchScreen.storyboard */; };
 		81CE43602492EE110022B98F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CE435F2492EE110022B98F /* SearchViewController.swift */; };
+		81EEA3BA24A47F6600932097 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EEA3B924A47F6600932097 /* ColorViewController.swift */; };
 		81FE4AFD2499708C005FE8A7 /* DefinitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE4AFC2499708C005FE8A7 /* DefinitionViewController.swift */; };
 		81FE4B0224998E78005FE8A7 /* WordDefinitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE4B0124998E78005FE8A7 /* WordDefinitionCell.swift */; };
 		81FE4B042499DE60005FE8A7 /* WordJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE4B032499DE60005FE8A7 /* WordJSON.swift */; };
@@ -26,7 +27,7 @@
 
 /* Begin PBXFileReference section */
 		81169973249A9EA20070550F /* WordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListViewController.swift; sourceTree = "<group>"; };
-		8141C950249DCAA9000E10D5 /* CardDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDefinition.swift; sourceTree = "<group>"; };
+		8141C950249DCAA9000E10D5 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		817FB7EF249B0BE0007D1CC6 /* MyDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDictionary.swift; sourceTree = "<group>"; };
 		817FB7F1249B0BEE007D1CC6 /* WordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinition.swift; sourceTree = "<group>"; };
 		8197F534249F2CC6003B6CF1 /* CustomTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +40,7 @@
 		81CE43572492EBAF0022B98F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81CE43592492EBAF0022B98F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81CE435F2492EE110022B98F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		81EEA3B924A47F6600932097 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		81FE4AFC2499708C005FE8A7 /* DefinitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionViewController.swift; sourceTree = "<group>"; };
 		81FE4B0124998E78005FE8A7 /* WordDefinitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionCell.swift; sourceTree = "<group>"; };
 		81FE4B032499DE60005FE8A7 /* WordJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordJSON.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				81FE4AFC2499708C005FE8A7 /* DefinitionViewController.swift */,
 				81169973249A9EA20070550F /* WordListViewController.swift */,
 				8197F534249F2CC6003B6CF1 /* CustomTabViewController.swift */,
+				81EEA3B924A47F6600932097 /* ColorViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -105,7 +108,7 @@
 				81FE4B032499DE60005FE8A7 /* WordJSON.swift */,
 				817FB7EF249B0BE0007D1CC6 /* MyDictionary.swift */,
 				817FB7F1249B0BEE007D1CC6 /* WordDefinition.swift */,
-				8141C950249DCAA9000E10D5 /* CardDefinition.swift */,
+				8141C950249DCAA9000E10D5 /* Definition.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81CE43532492EBAD0022B98F /* MyDictionary.xcdatamodeld in Sources */,
+				81EEA3BA24A47F6600932097 /* ColorViewController.swift in Sources */,
 				8197F535249F2CC6003B6CF1 /* CustomTabViewController.swift in Sources */,
 				81FE4B042499DE60005FE8A7 /* WordJSON.swift in Sources */,
 				81CE43492492EBAD0022B98F /* AppDelegate.swift in Sources */,
@@ -198,7 +202,7 @@
 				81CE434B2492EBAD0022B98F /* SceneDelegate.swift in Sources */,
 				81169974249A9EA20070550F /* WordListViewController.swift in Sources */,
 				81FE4AFD2499708C005FE8A7 /* DefinitionViewController.swift in Sources */,
-				8141C951249DCAA9000E10D5 /* CardDefinition.swift in Sources */,
+				8141C951249DCAA9000E10D5 /* Definition.swift in Sources */,
 				817FB7F2249B0BEE007D1CC6 /* WordDefinition.swift in Sources */,
 				817FB7F0249B0BE0007D1CC6 /* MyDictionary.swift in Sources */,
 			);

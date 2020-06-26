@@ -7,14 +7,18 @@
 //
 
 import UIKit
+ 
+ protocol ColorChanger {
+    func changeColors(color: UIColor)
+ }
 
-class SearchViewController: UIViewController {
+ class SearchViewController: UIViewController, ColorChanger {
     
     let primaryColor = CGColor(srgbRed: 255/255, green: 90/255, blue: 95/255, alpha: 1.0)
     let secondaryColor = CGColor(srgbRed: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-    let partsOfSpeech: [String] = ["Noun", "Verb"]
-    let definitions: [String] = ["a tool with a heavy metal head mounted at right angles at the end of a handle, used for jobs such as breaking things and driving in nails.","hit or beat (something) with a hammer or similar object."]
     
+    
+    @IBOutlet weak var colorGear: UIButton!
     @IBOutlet weak var wordSearchBar: UISearchBar!
     
     
@@ -33,7 +37,7 @@ class SearchViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
     }
-        
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "searchToDefinition"){
             if let wordDef = sender as? WordDefinition {
@@ -41,6 +45,26 @@ class SearchViewController: UIViewController {
                 vc.wordDefinition = wordDef
             }
         }
+        
+        if(segue.identifier == "searchToColor"){
+            let vc = segue.destination as! ColorViewController
+            vc.colorChangerDelegate = self
+        }
+        
+    }
+    
+    @IBAction func gearButtonTapped(_ sender: Any) {
+        
+        performSegue(withIdentifier: "searchToColor", sender: nil)
+    }
+    
+    func changeColors(color: UIColor) {
+        
+        //cGColor --> UIcolor cGColor(UIColor: color) -- constructor
+        //UIColor --> CGColor UIColor.cgColor -- attribute
+        
+        colorGear.tintColor = color
+        wordSearchBar.layer.borderColor = color.cgColor
     }
     
 }

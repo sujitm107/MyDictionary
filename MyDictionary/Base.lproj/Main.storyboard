@@ -25,11 +25,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="topRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foA-IV-B29">
+                                <rect key="frame" x="347" y="95" width="27" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" red="1" green="0.35294117650000001" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="gear" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="gearButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C81-fv-kac"/>
+                                    <segue destination="joe-Ue-B5e" kind="presentation" identifier="searchToColor" id="XUn-rH-IDu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ueZ-Xz-6yR" secondAttribute="trailing" constant="40" id="0Ym-Cj-7cN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tay-1e-sjc" secondAttribute="trailing" id="4Ce-Dv-XJo"/>
+                            <constraint firstItem="foA-IV-B29" firstAttribute="centerY" secondItem="Tay-1e-sjc" secondAttribute="centerY" constant="1" id="8du-60-pZ2"/>
+                            <constraint firstItem="foA-IV-B29" firstAttribute="trailing" secondItem="ueZ-Xz-6yR" secondAttribute="trailing" id="UAU-Wt-4eI"/>
                             <constraint firstItem="ueZ-Xz-6yR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="aJP-ma-hF5"/>
                             <constraint firstItem="ueZ-Xz-6yR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Tay-1e-sjc" secondAttribute="bottom" constant="10" id="e8J-v9-n7a"/>
                             <constraint firstItem="Tay-1e-sjc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="fVI-V4-92q"/>
@@ -43,6 +57,7 @@
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="colorGear" destination="foA-IV-B29" id="3Ae-Oq-V60"/>
                         <outlet property="wordSearchBar" destination="ueZ-Xz-6yR" id="Jqm-Gh-j1x"/>
                         <segue destination="r2Z-ge-9vO" kind="show" identifier="searchToDefinition" id="aXw-v6-v3E"/>
                     </connections>
@@ -192,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpX-2c-vOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2020" y="394"/>
+            <point key="canvasLocation" x="1987" y="606"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Wk7-Nc-Ke0">
@@ -274,6 +289,88 @@
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="521.65178571428567"/>
         </scene>
+        <!--Color View Controller-->
+        <scene sceneID="Umh-Fe-g7q">
+            <objects>
+                <viewController id="joe-Ue-B5e" customClass="ColorViewController" customModule="MyDictionary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Yb-ul-uoJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="k1S-ew-fWM">
+                                <rect key="frame" x="117" y="406" width="180" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2u-j4-AKJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.35294117650000001" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="colorButtonTapped:" destination="joe-Ue-B5e" eventType="touchUpInside" id="iJD-vF-736"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPX-4s-I9P">
+                                        <rect key="frame" x="50" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="colorButtonTapped:" destination="joe-Ue-B5e" eventType="touchUpInside" id="h3J-4v-4E4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwI-ft-CKO">
+                                        <rect key="frame" x="100" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="colorButtonTapped:" destination="joe-Ue-B5e" eventType="touchUpInside" id="Bvu-do-y8M"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nk0-0a-mT1">
+                                        <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="colorButtonTapped:" destination="joe-Ue-B5e" eventType="touchUpInside" id="uH5-Cp-2fd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nk0-0a-mT1" firstAttribute="width" secondItem="S2u-j4-AKJ" secondAttribute="width" id="OKX-1m-PJw"/>
+                                    <constraint firstItem="nk0-0a-mT1" firstAttribute="height" secondItem="S2u-j4-AKJ" secondAttribute="height" id="UxZ-vS-79t"/>
+                                    <constraint firstItem="NwI-ft-CKO" firstAttribute="height" secondItem="S2u-j4-AKJ" secondAttribute="height" id="Z3a-Ve-eLQ"/>
+                                    <constraint firstItem="mPX-4s-I9P" firstAttribute="height" secondItem="S2u-j4-AKJ" secondAttribute="height" id="ZGL-SK-8g6"/>
+                                    <constraint firstItem="NwI-ft-CKO" firstAttribute="width" secondItem="S2u-j4-AKJ" secondAttribute="width" id="o2N-YC-OLJ"/>
+                                    <constraint firstItem="mPX-4s-I9P" firstAttribute="width" secondItem="S2u-j4-AKJ" secondAttribute="width" id="xdI-SB-DQC"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="k1S-ew-fWM" firstAttribute="centerY" secondItem="3Yb-ul-uoJ" secondAttribute="centerY" id="4qc-ck-HcF"/>
+                            <constraint firstItem="k1S-ew-fWM" firstAttribute="centerX" secondItem="3Yb-ul-uoJ" secondAttribute="centerX" id="KJH-hX-Ldv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ivG-hu-NvM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jBV-Xa-wQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1987" y="-94"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="aXw-v6-v3E"/>
@@ -282,6 +379,7 @@
         <image name="Search Icon" width="512" height="512"/>
         <image name="book" catalog="system" width="128" height="101"/>
         <image name="dictionaryWhite" width="100" height="100"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
     </resources>
 </document>
