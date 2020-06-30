@@ -18,20 +18,21 @@ class DefinitionViewController: UIViewController {
     var cwordDefinition: ListWord?
 
     var definitions: [Definition]?
+    var set: [DefinitionEntry]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if cwordDefinition != nil {
+        if cwordDefinition != nil { //getting word from network request
             let savedText = cwordDefinition?.text
             wordLabel.text = savedText
-            let set = cwordDefinition?.definitions?.allObjects as! [DefinitionEntry]
+            set = cwordDefinition?.definitions?.allObjects as! [DefinitionEntry]
             
-            let definitionSet = convertToDefinitionSet(set: set)
+            let definitionSet = convertToDefinitionSet(set: set!)
             definitions = definitionSet
             
             
-        } else {
+        } else { //getting word from core data
             definitions = self.wordDefinition?.getDefinitions(lexicalEntries: wordDefinition!.word.results![0].lexicalEntries!)
             MyDictionary.getInstance().addDefinition(word: wordDefinition!.id, defintions: definitions!)
             self.wordLabel.text = wordDefinition?.id
@@ -70,10 +71,10 @@ class DefinitionViewController: UIViewController {
             
             //have to make this dummy proof
             let temp = Definition(partOfSpeech: "MyNote", definition: alert.textFields![0].text!)
-            self.definitions?.append(temp)
+            self.definitions?.append(temp) //we're adding it here, however, when we form the cells later, we are not using this to retrieve
 
             let wordstr: String = (self.wordDefinition?.id != nil) ? self.wordDefinition!.id : self.cwordDefinition!.text!
-            MyDictionary.getInstance().addDefinition(word: wordstr, defintions: [temp])
+            MyDictionary.getInstance().addDefinition(word: wordstr, defintions: [temp]) //saving data
             
             self.definitionTableView.reloadData()
             
@@ -92,7 +93,7 @@ class DefinitionViewController: UIViewController {
 
 extension DefinitionViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return definitions?.count ?? 0
+        return definitions?.count ?? 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -109,6 +110,17 @@ extension DefinitionViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 250
+    }
+    
+    // deleting definition item from memory and from list
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if cwordDefinition == nil { return }
+        
+        MyDictionary.getInstance().removeDefinition(string: self.wordLabel!.text!, definition: set![indexPath.row])
+        definitions?.remove(at: indexPath.row)
+        definitionTableView.deleteRows(at: [indexPath], with: .fade)
+        self.definitionTableView.reloadData()
     }
     
 }

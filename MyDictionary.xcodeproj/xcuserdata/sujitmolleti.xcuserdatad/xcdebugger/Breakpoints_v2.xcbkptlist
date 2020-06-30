@@ -23,54 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "04C81085-3409-424D-A2BE-EFB75627C2A7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyDictionary/Controllers/DefinitionViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "04C81085-3409-424D-A2BE-EFB75627C2A7 - ef4ad3c46f5a6d84"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MyDictionary.DefinitionViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MyDictionary"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sujitmolleti/Desktop/Coding/IOS%20Projects/Summer2020/MyDictionary/MyDictionary/Controllers/DefinitionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "557">
-               </Location>
-               <Location
-                  uuid = "04C81085-3409-424D-A2BE-EFB75627C2A7 - ef4ad3c46f5a6d84"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MyDictionary.DefinitionViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MyDictionary"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sujitmolleti/Desktop/Coding/IOS%20Projects/Summer2020/MyDictionary/MyDictionary/Controllers/DefinitionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "1704">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "FC06E37A-9ECD-4865-ACCD-62D37F1FCAB6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -94,10 +46,58 @@
             filePath = "MyDictionary/Controllers/DefinitionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "addButtonTapped(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0416BAA6-B167-44B0-92A4-B10DA1E4CF5E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyDictionary/Controllers/DefinitionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0416BAA6-B167-44B0-92A4-B10DA1E4CF5E - dd8b80ba32a0e499"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyDictionary.DefinitionViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "MyDictionary"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sujitmolleti/Desktop/Coding/IOS%20Projects/Summer2020/MyDictionary/MyDictionary/Controllers/DefinitionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "1065">
+               </Location>
+               <Location
+                  uuid = "0416BAA6-B167-44B0-92A4-B10DA1E4CF5E - dd8b80ba32a0e499"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyDictionary.DefinitionViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "MyDictionary"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sujitmolleti/Desktop/Coding/IOS%20Projects/Summer2020/MyDictionary/MyDictionary/Controllers/DefinitionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "4106">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

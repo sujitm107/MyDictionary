@@ -59,7 +59,9 @@ class MyDictionary{
         }
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        guard let savedWord: ListWord = getSavedWord(string: word) else { return }
+        let lword = word.lowercased()
+        
+        guard let savedWord: ListWord = getSavedWord(string: lword) else { return }
         for definition in defintions {
             
             //2 Links entity to NSManagedObject at runtime
@@ -131,6 +133,23 @@ class MyDictionary{
         //} catch let error as NSError {
         //    print("Could not save. \(error), \(error.userInfo)")
         //}
+    }
+    
+    func removeDefinition(string: String, definition: DefinitionEntry){
+        
+        var removedWord: ListWord?
+        
+        for word in wordsList {
+            let temp = word as! ListWord
+            if(temp.text!.lowercased() == string.lowercased()){
+                removedWord = temp
+                break
+            }
+        }
+        
+        if removedWord == nil { return }
+        removedWord?.removeFromDefinitions(definition)
+        
     }
     
 }

@@ -22,7 +22,7 @@ class WordDefinition{
    
    func getDefinitions(lexicalEntries: [LexicalEntry]) -> [Definition]{
        
-    var definitions: [Definition] = []
+       var definitions: [Definition] = []
 
        for lexicalEntry in lexicalEntries{
         

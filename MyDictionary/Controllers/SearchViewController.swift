@@ -90,10 +90,10 @@ import UIKit
         fetchWord { (Word) in
             DispatchQueue.main.async {
                 
-                //save data
+                //saving the word
                 MyDictionary.getInstance().saveWord(text: searchBar.text!)
                 
-                //perform segue
+                //perform segue -- sending the word to the DefinitionViewController
                 let wordTemp = WordDefinition(word: Word)
                 self.performSegue(withIdentifier: "searchToDefinition", sender: wordTemp)
             }
