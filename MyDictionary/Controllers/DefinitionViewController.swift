@@ -13,6 +13,7 @@ class DefinitionViewController: UIViewController {
     
     @IBOutlet weak var definitionTableView: UITableView!
     @IBOutlet weak var wordLabel: UILabel!
+    
     var wordDefinition: WordDefinition?
     var cwordDefinition: ListWord?
 
@@ -56,6 +57,36 @@ class DefinitionViewController: UIViewController {
         return definitionSet
         
     }
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "New Note", message: "Enter a note.", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Enter a note..."
+        }
+        
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (UIAlertAction) in
+            
+            //have to make this dummy proof
+            let temp = Definition(partOfSpeech: "MyNote", definition: alert.textFields![0].text!)
+            self.definitions?.append(temp)
+
+            let wordstr: String = (self.wordDefinition?.id != nil) ? self.wordDefinition!.id : self.cwordDefinition!.text!
+            MyDictionary.getInstance().addDefinition(word: wordstr, defintions: [temp])
+            
+            self.definitionTableView.reloadData()
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (UIAlertAction) in
+            print("Cancel")
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     
 }
 

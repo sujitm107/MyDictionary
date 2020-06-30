@@ -16,6 +16,7 @@ import UIKit
     
     let primaryColor = CGColor(srgbRed: 255/255, green: 90/255, blue: 95/255, alpha: 1.0)
     let secondaryColor = CGColor(srgbRed: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+    let defaults = UserDefaults.standard
     
     
     @IBOutlet weak var colorGear: UIButton!
@@ -28,6 +29,9 @@ import UIKit
         MyDictionary.getInstance().loadWordsList()
         
         wordSearchBar.layer.borderColor = primaryColor
+        //let savedColor = getColorState()
+        //changeColors(color: savedColor)
+        
         wordSearchBar.layer.borderWidth = 1.0
         wordSearchBar.layer.cornerRadius = 20
         
@@ -65,6 +69,15 @@ import UIKit
         
         colorGear.tintColor = color
         wordSearchBar.layer.borderColor = color.cgColor
+        
+        //changing tab color
+        let parent = self.parent as! CustomTabViewController
+        parent.changeTabColor(color: color)
+    }
+    
+    func getColorState() -> UIColor {
+        let color: UIColor = (defaults.object(forKey: ColorViewController.key) as? UIColor) ?? UIColor.systemTeal
+        return color
     }
     
 }

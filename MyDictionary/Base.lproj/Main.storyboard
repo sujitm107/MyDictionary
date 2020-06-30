@@ -185,6 +185,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sB6-zT-0AE">
+                                <rect key="frame" x="358" y="38.5" width="36" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="L7i-BR-Omf"/>
+                                    <constraint firstAttribute="width" secondItem="sB6-zT-0AE" secondAttribute="height" multiplier="9:10" constant="6.3000000000000007" id="RmP-Z2-aUg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                <color key="tintColor" red="1" green="0.35294117650000001" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="plus" catalog="system" backgroundImage="plus"/>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="r2Z-ge-9vO" eventType="touchUpInside" id="wFo-4G-aBk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -194,7 +207,9 @@
                             <constraint firstAttribute="trailing" secondItem="Qrl-FT-6jf" secondAttribute="trailing" id="5bv-7i-PCe"/>
                             <constraint firstItem="7gB-Iy-0gN" firstAttribute="top" secondItem="j87-Yf-RAj" secondAttribute="top" constant="30" id="6jt-0a-BgG"/>
                             <constraint firstItem="7gB-Iy-0gN" firstAttribute="leading" secondItem="j87-Yf-RAj" secondAttribute="leading" constant="30" id="Ugm-FV-e7e"/>
+                            <constraint firstItem="j87-Yf-RAj" firstAttribute="trailing" secondItem="sB6-zT-0AE" secondAttribute="trailing" constant="20" id="WdC-K4-Uha"/>
                             <constraint firstItem="Qrl-FT-6jf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7gB-Iy-0gN" secondAttribute="bottom" id="ago-ir-7Zt"/>
+                            <constraint firstItem="sB6-zT-0AE" firstAttribute="centerY" secondItem="7gB-Iy-0gN" secondAttribute="centerY" id="k5d-4i-1ae"/>
                             <constraint firstItem="j87-Yf-RAj" firstAttribute="trailing" secondItem="7gB-Iy-0gN" secondAttribute="trailing" constant="5" id="kZQ-IL-zNd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j87-Yf-RAj"/>
@@ -207,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpX-2c-vOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1987" y="606"/>
+            <point key="canvasLocation" x="1986.9565217391305" y="604.6875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Wk7-Nc-Ke0">
@@ -381,5 +396,6 @@
         <image name="dictionaryWhite" width="100" height="100"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
 </document>

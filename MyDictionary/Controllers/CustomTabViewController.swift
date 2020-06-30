@@ -14,7 +14,6 @@ class CustomTabViewController: UIViewController {
     var previousIndex: Int = 0
     
     var viewControllers = [UIViewController]()
-    
     let primaryColor: UIColor = UIColor(displayP3Red: 255/255, green: 90/255, blue: 95/255, alpha: 1.0)
     
     @IBOutlet var buttons: [UIButton]!
@@ -80,6 +79,10 @@ class CustomTabViewController: UIViewController {
         self.view.addSubview(vc.view)
         self.view.bringSubviewToFront(tabView)
         
+    }
+    
+    func changeTabColor(color: UIColor){
+        tabView.backgroundColor = color
     }
     
 }

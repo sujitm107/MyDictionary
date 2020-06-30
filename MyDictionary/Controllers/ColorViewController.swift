@@ -11,13 +11,14 @@ import UIKit
 class ColorViewController: UIViewController {
     
     static var theme = UIColor(displayP3Red: 255/255, green: 90/255, blue: 95/255, alpha: 1.0)
-    
     var colorChangerDelegate: ColorChanger?
+    
+    static let key = "color"
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func colorButtonTapped(_ sender: UIButton!) {
@@ -25,6 +26,15 @@ class ColorViewController: UIViewController {
         let color: UIColor = sender.backgroundColor!
         colorChangerDelegate?.changeColors(color: color)
         
+        //saveColorState(color: color)
     }
+    
+//    func saveColorState(color: UIColor){
+//        defaults.set(color, forKey: ColorViewController.key)
+//        
+//        print("Hi")
+//    }
+    
+    
     
 }
