@@ -13,6 +13,7 @@ class WordListViewController: UIViewController {
 
     @IBOutlet weak var wordListTableView: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +25,17 @@ class WordListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         wordListTableView.reloadData()
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        guard motion == .motionShake else { return }
+        
+        //sort words
+        MyDictionary.getInstance().sortWords()
+        wordListTableView.reloadData()
+        print("Sorted Words")
+            
+        //shuffle words
     }
     
 }
