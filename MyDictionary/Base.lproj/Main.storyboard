@@ -216,6 +216,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="tkx-cm-zca"/>
                     <connections>
+                        <outlet property="addButton" destination="sB6-zT-0AE" id="lyX-4Z-B7A"/>
                         <outlet property="definitionTableView" destination="Qrl-FT-6jf" id="ywU-AN-cvs"/>
                         <outlet property="wordLabel" destination="7gB-Iy-0gN" id="uqT-45-I16"/>
                     </connections>

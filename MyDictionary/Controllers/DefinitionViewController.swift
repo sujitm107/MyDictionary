@@ -13,6 +13,7 @@ class DefinitionViewController: UIViewController {
     
     @IBOutlet weak var definitionTableView: UITableView!
     @IBOutlet weak var wordLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
     
     var wordDefinition: WordDefinition?
     var cwordDefinition: ListWord?
@@ -22,6 +23,8 @@ class DefinitionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addButton.tintColor = ColorViewController.theme
         
         if cwordDefinition != nil { //getting word from network request
             let savedText = cwordDefinition?.text

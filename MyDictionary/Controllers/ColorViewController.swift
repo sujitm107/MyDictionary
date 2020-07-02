@@ -24,7 +24,12 @@ class ColorViewController: UIViewController {
     @IBAction func colorButtonTapped(_ sender: UIButton!) {
         
         let color: UIColor = sender.backgroundColor!
+        ColorViewController.theme = color
         colorChangerDelegate?.changeColors(color: color)
+        
+        self.dismiss(animated: true) {
+            print("Dismissed ColorView")
+        }
         
         //saveColorState(color: color)
     }
