@@ -13,6 +13,7 @@ class WordListViewController: UIViewController {
 
     @IBOutlet weak var wordListTableView: UITableView!
     
+    var sorted = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +31,19 @@ class WordListViewController: UIViewController {
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         guard motion == .motionShake else { return }
         
-        //sort words
-        MyDictionary.getInstance().sortWords()
+        
+        if(sorted){
+            //sort words
+            MyDictionary.getInstance().sortWords()
+            print("Sorted Words")
+        } else{
+            //shuffle words
+            MyDictionary.getInstance().shuffleWords()
+            print("Shuffled Words")
+        }
+        
+        sorted = !sorted
         wordListTableView.reloadData()
-        print("Sorted Words")
-            
-        //shuffle words
     }
     
 }

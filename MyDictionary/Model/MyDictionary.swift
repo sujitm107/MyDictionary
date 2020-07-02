@@ -157,13 +157,19 @@ class MyDictionary{
             let word1 = x as! ListWord
             let word2 = y as! ListWord
             
-            print("comparing \(word1.text!) and \(word2.text!)")
+            //print("comparing \(word1.text!) and \(word2.text!)")
             
             if(word1.text! < word2.text!){
                 return true
             }
             return false
         }
+    }
+    
+    func shuffleWords(){
+        
+        wordsList.shuffle()
+        
     }
     
 }
